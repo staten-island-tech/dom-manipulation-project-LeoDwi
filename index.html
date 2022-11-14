@@ -7,28 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>What do you want to create?</h1>
-    <section class="form-parent">
-      <form id="form">
-        <div class="form-inputs">
-          <div class="form-input">
-            <label for="title">Title:</label>
-            <input type="text" class="text-box" id="title" required />
+    <div id="background">
+      <h1>What do you want to create?</h1>
+      <section class="form-parent">
+        <form id="form">
+          <div class="form-inputs">
+            <div class="form-input">
+              <label for="title">Title:</label>
+              <input type="text" class="text-box" id="title" required />
+            </div>
+            <div class="form-input">
+              <label for="title">Content 1:</label>
+              <input type="text" class="text-box" id="Content1" required />
+            </div>
+            <div class="form-input">
+              <label for="title">Content 2:</label>
+              <input type="text" class="text-box" id="content2" required />
+            </div>
           </div>
-          <div class="form-input">
-            <label for="title">Content 1:</label>
-            <input type="text" class="text-box" id="Content1" required />
+          <div class="here-form-input">
+            <input type="submit" value="submit" id="btn" />
           </div>
-          <div class="form-input">
-            <label for="title">Content 2:</label>
-            <input type="text" class="text-box" id="content2" required />
-          </div>
-        </div>
-        <div class="here-form-input">
-          <input type="submit" value="submit" class="btn" />
-        </div>
-      </form>
-    </section>
-    <script src="index.js"></script>
+        </form>
+      </section>
+      <script src="index.js"></script>
+    </div>
   </body>
 </html>
