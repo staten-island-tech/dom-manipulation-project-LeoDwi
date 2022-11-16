@@ -1,19 +1,19 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
-  title: document.getElementsByClassName("title"),
-  content1: document.getElementsByClassName("content1"),
-  content2: document.getElementsByClassName("content2"),
+  title: document.getElementById("title"),
+  contentOne: document.getElementById("content1"),
+  contentTwo: document.getElementById("content2"),
   box: document.getElementById("background"),
 };
 console.log(DOMSelectors);
 
 DOMSelectors.button.addEventListener("click", function () {
   let title = DOMSelectors.title.value;
-  let content1 = DOMSelectors.content1.value;
-  let content2 = DOMSelectors.content2.value;
+  let contentOne = DOMSelectors.contentOne.value;
+  let contentTwo = DOMSelectors.contentTwo.value;
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
-    `${title} ${content1} ${content2}`
+    `<p>${title} ${contentOne} ${contentTwo}</p>`
   );
   console.log(title);
   console.log(content1);
