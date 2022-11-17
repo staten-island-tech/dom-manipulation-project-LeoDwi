@@ -1,22 +1,38 @@
 const DOMSelectors = {
+  form: document.getElementsByClassName("text"),
   button: document.getElementById("btn"),
-  title: document.getElementById("title"),
-  contentOne: document.getElementById("content1"),
-  contentTwo: document.getElementById("content2"),
+  title: document.querySelector(`#title`),
+  contentOne: document.querySelector(`#content1`),
+  contentTwo: document.querySelector(`#content2`),
   box: document.getElementById("background"),
 };
 console.log(DOMSelectors);
 
-DOMSelectors.button.addEventListener("click", function () {
+DOMSelectors.form.addEventListener("submit", function () {
+  console.log(wooh);
   let title = DOMSelectors.title.value;
   let contentOne = DOMSelectors.contentOne.value;
   let contentTwo = DOMSelectors.contentTwo.value;
+  const Card = {
+    title: title,
+    contentOne: contentOne,
+    contentTwo: contentTwo,
+  };
+  //create object from values
+  event.preventDefault();
+
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
+    //make card less poopy
     `<p>${title} ${contentOne} ${contentTwo}</p>`
   );
   console.log(title);
-  console.log(content1);
-  console.log(content2);
-  event.preventDefault();
+  console.log(contentOne);
+  console.log(contentTwo);
 });
+
+function clearInput() {
+  DOMSelectors.title.value = "";
+  DOMSelectors.contentOne.value = "";
+  DOMSelectors.contentTwo.value = "";
+}
