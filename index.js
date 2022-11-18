@@ -5,19 +5,15 @@ const DOMSelectors = {
   contentOne: document.querySelector(`#content1`),
   contentTwo: document.querySelector(`#content2`),
   box: document.getElementById("background"),
+  removeButton: document.getElementById("removeBtn"),
 };
 console.log(DOMSelectors);
 
-// function objectCreator() {
 DOMSelectors.form.addEventListener("submit", function object(event) {
-  console.log(wooh);
-  let title = DOMSelectors.title.value;
-  let contentOne = DOMSelectors.contentOne.value;
-  let contentTwo = DOMSelectors.contentTwo.value;
   const Card = {
-    title: title,
-    contentOne: contentOne,
-    contentTwo: contentTwo,
+    title: DOMSelectors.title.value,
+    contentOne: DOMSelectors.contentOne.value,
+    contentTwo: DOMSelectors.contentTwo.value,
   };
   console.log(Card);
   //create object from values
@@ -25,17 +21,18 @@ DOMSelectors.form.addEventListener("submit", function object(event) {
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
     //make card less poopy
-    `<p>${title} ${contentOne} ${contentTwo}</p>`
+    `<h2>${Card.title}</h2>`
   );
-  console.log(title);
-  console.log(contentOne);
-  console.log(contentTwo);
+  clearInput();
   event.preventDefault();
 });
-//}
 
 function clearInput() {
   DOMSelectors.title.value = "";
   DOMSelectors.contentOne.value = "";
   DOMSelectors.contentTwo.value = "";
 }
+
+DOMSelectors.removeButton.addEventListener("click", function removeCard(event) {
+  event.preventDefault();
+});

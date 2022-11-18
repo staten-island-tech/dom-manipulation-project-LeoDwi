@@ -131,3 +131,52 @@ h5 {
   background-color: red;
   color: white;
 }
+
+.whalen {
+  height: 0.01px;
+  width: 0.01px;
+  background-color: red;
+  animation: test 10s infinite;
+  position: fixed;
+}
+
+.whalen1 {
+  height: 0.01px;
+  width: 0.01px;
+  animation: test 10s infinite;
+  animation-delay: 5s;
+  position: fixed;
+}
+
+@keyframes test {
+  0% {
+    left: 0%;
+    bottom: 15%;
+    background-color: aqua;
+    rotate: 0deg;
+  }
+  25% {
+    left: 100%;
+    bottom: 15%;
+    background-color: black;
+    /* rotate: 90deg; */
+  }
+  50% {
+    left: 100%;
+    bottom: 85%;
+    background-color: azure;
+    rotate: 180deg;
+  }
+  75% {
+    left: 0%;
+    bottom: 75%;
+    background-color: blueviolet;
+    /* rotate: 270deg; */
+  }
+  100% {
+    left: 0%;
+    bottom: 15%;
+    background-color: brown;
+    rotate: 360deg;
+  }
+}
