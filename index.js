@@ -1,5 +1,5 @@
 const DOMSelectors = {
-  form: document.getElementsByClassName("text"),
+  form: document.getElementById("form"),
   button: document.getElementById("btn"),
   title: document.querySelector(`#title`),
   contentOne: document.querySelector(`#content1`),
@@ -8,7 +8,8 @@ const DOMSelectors = {
 };
 console.log(DOMSelectors);
 
-DOMSelectors.form.addEventListener("submit", function () {
+// function objectCreator() {
+DOMSelectors.form.addEventListener("submit", function object(event) {
   console.log(wooh);
   let title = DOMSelectors.title.value;
   let contentOne = DOMSelectors.contentOne.value;
@@ -18,8 +19,8 @@ DOMSelectors.form.addEventListener("submit", function () {
     contentOne: contentOne,
     contentTwo: contentTwo,
   };
+  console.log(Card);
   //create object from values
-  event.preventDefault();
 
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
@@ -29,7 +30,9 @@ DOMSelectors.form.addEventListener("submit", function () {
   console.log(title);
   console.log(contentOne);
   console.log(contentTwo);
+  event.preventDefault();
 });
+//}
 
 function clearInput() {
   DOMSelectors.title.value = "";
