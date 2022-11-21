@@ -14,13 +14,6 @@ const DOMSelectors = {
 DOMSelectors.form.addEventListener("submit", function card(event) {
   insertHTML();
   clearInput();
-  /*   let button = document.getElementById("removeBtn");
-  button.addEventListener("click", function removeCard(event) {
-    title.remove();
-    Card.contentOne.remove();
-    Card.contentTwo.remove();
-    Card.event.preventDefault();
-  }); */
   event.preventDefault();
 });
 
@@ -32,10 +25,6 @@ function insertHTML() {
   };
   console.log(Card);
   //create object from values
-
-  /*   let cardDiv = document.createElement("div");
-  cardDiv.setAttribute("class", "display-card");
-  DOMSelectors.insertAdjacentElement("afterend", cardDiv); */
 
   DOMSelectors.outputContent1.insertAdjacentHTML(
     "afterend",
