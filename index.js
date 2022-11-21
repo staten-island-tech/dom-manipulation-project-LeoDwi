@@ -4,7 +4,10 @@ const DOMSelectors = {
   title: document.querySelector(`#title`),
   contentOne: document.querySelector(`#content1`),
   contentTwo: document.querySelector(`#content2`),
-  box: document.getElementById("display"),
+  outputTitle: document.getElementById("card title"),
+  outputContent1: document.getElementById("card content1"),
+  outputContent2: document.getElementById("card content2"),
+  box: document.getElementById("background"),
   removeButton: document.getElementById("removeBtn"),
 };
 
@@ -23,7 +26,7 @@ function insertHTML() {
   console.log(Card);
   //create object from values
 
-  DOMSelectors.box.insertAdjacentHTML(
+  DOMSelectors.outputContent1.insertAdjacentHTML(
     "afterend",
     //make card less poopy
     `
