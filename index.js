@@ -42,7 +42,7 @@ function insertHTML() {
   let button = document.getElementById("removeBtn");
   button.addEventListener("click", function removeCard(event) {
     const element = document.getElementById("display-card");
-    element.remove();
+    button.closest("div").remove();
     event.preventDefault();
   });
 }
