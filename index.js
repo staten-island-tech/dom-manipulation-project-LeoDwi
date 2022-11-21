@@ -11,10 +11,16 @@ const DOMSelectors = {
   removeButton: document.getElementById("removeBtn"),
 };
 
-DOMSelectors.form.addEventListener("submit", function Card(event) {
+DOMSelectors.form.addEventListener("submit", function card(event) {
   insertHTML();
   clearInput();
-  let remove = document.getElementById("removeBtn");
+  /*   let button = document.getElementById("removeBtn");
+  button.addEventListener("click", function removeCard(event) {
+    title.remove();
+    Card.contentOne.remove();
+    Card.contentTwo.remove();
+    Card.event.preventDefault();
+  }); */
   event.preventDefault();
 });
 
@@ -35,15 +41,21 @@ function insertHTML() {
     "afterend",
     //make card less poopy
     `
-    <div class="display-card">
+    <div class="display-card" id="display-card">
     <img class="display-img" src="https://www.gannett-cdn.com/presto/2019/08/08/USAT/dc1fe9c6-d585-42c4-9c69-e31cc46e4c94-ABBEY_ROAD.JPG?auto=webp&crop=1481,834,x0,y265&format=pjpg&width=1200"/>
     <h2 class="display-artist">${Card.title}</h2>
     <h3 class="display-album">${Card.contentOne}</h3>
     <h3 class="display-album">${Card.contentTwo}</h3>
-     <button class="remove btn">Remove</button>
+     <button class="remove btn" id="removeBtn" type="button">Remove</button>
 </div>
 `
   );
+  let button = document.getElementById("removeBtn");
+  button.addEventListener("click", function removeCard(event) {
+    const element = document.getElementById("display-card");
+    element.remove();
+    event.preventDefault();
+  });
 }
 
 function clearInput() {
@@ -53,9 +65,9 @@ function clearInput() {
 }
 
 /* DOMSelectors.removeButton.addEventListener("click", function removeCard(event) {
+  let card = "<div class=display-card></div>";
   outputTitle.remove();
   outputContent1.remove();
   outputContent2.remove();
   event.preventDefault();
-});
- */
+}); */
