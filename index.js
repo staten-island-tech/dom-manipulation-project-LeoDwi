@@ -63,11 +63,3 @@ function clearInput() {
   DOMSelectors.contentOne.value = "";
   DOMSelectors.contentTwo.value = "";
 }
-
-/* DOMSelectors.removeButton.addEventListener("click", function removeCard(event) {
-  let card = "<div class=display-card></div>";
-  outputTitle.remove();
-  outputContent1.remove();
-  outputContent2.remove();
-  event.preventDefault();
-}); */
