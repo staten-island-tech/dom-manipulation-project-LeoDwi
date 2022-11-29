@@ -10,20 +10,21 @@ const DOMSelectors = {
 };
 
 DOMSelectors.form.addEventListener("submit", function card(event) {
+  cardCreator();
   insertHTML();
   clearInput();
   event.preventDefault();
 });
 
-function insertHTML() {
+function cardCreator() {
   const Card = {
     title: DOMSelectors.title.value,
     contentOne: DOMSelectors.contentOne.value,
     contentTwo: DOMSelectors.contentTwo.value,
   };
-  console.log(Card);
-  //create object from values
+}
 
+function insertHTML() {
   DOMSelectors.output.insertAdjacentHTML(
     "afterend",
     //make card less poopy
@@ -33,15 +34,15 @@ function insertHTML() {
     <h2 class="display-artist">${Card.title}</h2>
     <h3 class="display-album">${Card.contentOne}</h3>
     <h3 class="display-album">${Card.contentTwo}</h3>
-     <button class="remove btn" id="removeBtn" type="button">Remove</button>
+     <button class="remove" id="removeBtn" type="button">Remove</button>
 </div>
 `
   );
-  let button = document.getElementById("removeBtn");
-  button.addEventListener("click", function removeCard(event) {
-    const element = document.getElementById("display-card");
-    button.closest("div").remove();
-    event.preventDefault();
+  let button = document.querySelectorAll(".remove");
+  button.forEach((button) => {
+    addEventListener("click", function removeCard() {
+      console.log(button.target);
+    });
   });
 }
 
