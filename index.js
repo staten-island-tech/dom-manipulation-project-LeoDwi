@@ -10,7 +10,7 @@ const DOMSelectors = {
 };
 
 DOMSelectors.form.addEventListener("submit", function card(event) {
-  //cardCreator();
+  cardCreator();
   insertHTML();
   clearInput();
   event.preventDefault();
@@ -24,13 +24,13 @@ function cardCreator() {
   };
 }
 
-function insertHTML() {
+function insertHTML(Card) {
   DOMSelectors.output.insertAdjacentHTML(
     "afterend",
     //make card less poopy
     `
     <div class="display-card" id="display-card">
-    <img class="display-img" src= ${url}>
+    <img class="display-img" src= ${Card.url}>
     <h2 class="display-artist">${Card.title}</h2>
     <h3 class="display-album">${Card.contentOne}</h3>
      <button class="remove" id="removeBtn" type="button" "on click">Remove</button>
@@ -38,10 +38,11 @@ function insertHTML() {
 `
   );
   let button = document.querySelectorAll(".removeBtn");
+  let div = document.querySelectorAll(".display-card");
   button.forEach((button) => {
     addEventListener("click", function removeCard(event) {
       console.log(button.target);
-      event.target.parentElement.remove();
+      event.target.div.remove();
       event.preventDefault();
     });
   });
