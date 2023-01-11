@@ -122,6 +122,11 @@ h5 {
 .display-album {
   font-size: var(--h3);
 }
+.placeholder {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+}
 .remove {
   padding: 1rem 2rem;
   display: inline-block;
