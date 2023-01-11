@@ -45,9 +45,11 @@ function insertHTML(x) {
   );
   let button = document.querySelectorAll(".remove");
   let div = document.querySelectorAll(".display-card");
-  button.addEventListener("click", function removeCard(event) {
-    button.closest("div").remove();
-    event.preventDefault();
+  button.forEach((button) => {
+    addEventListener("click", function removeCard(event) {
+      button.closest("div").remove();
+      event.preventDefault();
+    });
   });
 }
 
