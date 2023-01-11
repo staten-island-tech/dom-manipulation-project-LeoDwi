@@ -11,7 +11,7 @@ const DOMSelectors = {
 
 DOMSelectors.form.addEventListener("submit", function card(event) {
   cardCreator();
-  insertHTML();
+  insertHTML(Card);
   clearInput();
   event.preventDefault();
 });
@@ -22,17 +22,18 @@ function cardCreator() {
     contentOne: DOMSelectors.contentOne.value,
     url: DOMSelectors.contentTwo.value,
   };
+  return Card;
 }
 
-function insertHTML(Card) {
+function insertHTML(x) {
   DOMSelectors.output.insertAdjacentHTML(
     "afterend",
     //make card less poopy
     `
     <div class="display-card" id="display-card">
-    <img class="display-img" src="${Card.url}">
-    <h2 class="display-artist">${Card.title}</h2>
-    <h3 class="display-album">${Card.contentOne}</h3>
+    <img class="display-img" src="${x.url}">
+    <h2 class="display-artist">${x.title}</h2>
+    <h3 class="display-album">${x.contentOne}</h3>
      <button class="remove" id="removeBtn" type="button" "on click">Remove</button>
 </div>
 `
