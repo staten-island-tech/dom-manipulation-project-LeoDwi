@@ -43,7 +43,7 @@ function insertHTML(x) {
 </div>
 `
   );
-  let button = document.querySelectorAll(".removeBtn");
+  let button = document.querySelectorAll(".remove");
   let div = document.querySelectorAll(".display-card");
   button.addEventListener("click", function removeCard(event) {
     button.closest("div").remove();
