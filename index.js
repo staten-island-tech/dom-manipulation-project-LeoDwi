@@ -10,6 +10,11 @@ const DOMSelectors = {
 };
 
 DOMSelectors.form.addEventListener("submit", function card(event) {
+  const Card = {
+    title: DOMSelectors.title.value,
+    contentOne: DOMSelectors.contentOne.value,
+    url: DOMSelectors.contentTwo.value,
+  };
   cardCreator();
   insertHTML(Card);
   clearInput();
