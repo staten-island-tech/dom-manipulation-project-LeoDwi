@@ -4,7 +4,7 @@ const DOMSelectors = {
   title: document.querySelector(`#title`),
   contentOne: document.querySelector(`#content1`),
   contentTwo: document.querySelector(`#content2`),
-  output: document.getElementById("display"),
+  output: document.getElementById("display-cards"),
   box: document.getElementById("background"),
   removeButton: document.getElementById("removeBtn"),
 };
