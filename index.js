@@ -30,7 +30,7 @@ function insertHTML(Card) {
     //make card less poopy
     `
     <div class="display-card" id="display-card">
-    <img class="display-img" src= ${Card.url}>
+    <img class="display-img" src="${Card.url}">
     <h2 class="display-artist">${Card.title}</h2>
     <h3 class="display-album">${Card.contentOne}</h3>
      <button class="remove" id="removeBtn" type="button" "on click">Remove</button>
